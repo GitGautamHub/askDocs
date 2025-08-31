@@ -136,7 +136,12 @@ For a production environment, this application should be deployed on a virtual p
     
         npm install
     
-3.  **Start the React development server:**
+3.  **Configure the API URL:**
+    * Create a `.env` file in the `frontend` directory.
+    * Add the following line to the file, which will be used for local development.
+    ```
+    VITE_API_URL=http://127.0.0.1:8000
+4.  **Start the React development server:**
     This will compile the frontend and open the application in your default browser.
     
     Bash
