@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import FileUploader from './FileUploader';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 // Document List Component
 const DocumentList = ({ documents, onSelectDoc, onUpload }) => {
@@ -24,7 +25,7 @@ const DocumentList = ({ documents, onSelectDoc, onUpload }) => {
     // Delete document handler
     const handleDelete = async (file_id, file_name) => {
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/documents/${file_id}`);
+            await axios.delete(`${API_URL}/api/documents/${file_id}`);
             toast.success(`Document '${file_name}' deleted.`);
             window.location.reload();
         } catch (error) {

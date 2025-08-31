@@ -6,6 +6,7 @@ import { Document, Page, pdfjs } from 'react-pdf';
 // Set the worker source to the locally hosted file.
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 // Document Viewer Component
 const DocumentViewer = ({ doc, pageToView }) => {
   const [numPages, setNumPages] = useState(null);
@@ -26,7 +27,7 @@ const DocumentViewer = ({ doc, pageToView }) => {
       <div className="relative flex-grow overflow-hidden border border-gray-300 rounded-lg">
         <div className="absolute inset-0 overflow-y-auto">
           <Document
-            file={`http://127.0.0.1:8000/api/download/${doc.id}`}
+            file={`${API_URL}/api/download/${doc.id}`}
             onLoadSuccess={onDocumentLoadSuccess}
             className="flex justify-center"
           >

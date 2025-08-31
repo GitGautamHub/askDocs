@@ -8,7 +8,7 @@ import DocumentViewer from './components/DocumentViewer';
 import QA_Panel from './components/QA_Panel';
 import { ToastContainer } from 'react-toastify';
 import './index.css';
-
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 // Main App Component
 function App() {
@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
         const fetchDocuments = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/documents');
+                const response = await axios.get(`${API_URL}/api/documents`);
                 const fetchedDocuments = response.data.documents;
                 setDocuments(fetchedDocuments);
             } catch (error) {
@@ -47,7 +47,7 @@ function App() {
       if (doc.status !== 'Indexed' && doc.status !== 'Failed') {
         const pollStatus = setInterval(async () => {
           try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/status/${doc.id}`);
+            const response = await axios.get(`${API_URL}/api/status/${doc.id}`);
             const newStatus = response.data.status;
             setDocuments(prevDocs =>
               prevDocs.map(d => (d.id === doc.id ? { ...d, status: newStatus } : d))

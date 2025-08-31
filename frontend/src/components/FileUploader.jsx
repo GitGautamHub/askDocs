@@ -4,6 +4,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 // File Upload Component
 const FileUploader = ({ onUploadSuccess }) => {
@@ -36,7 +37,7 @@ const FileUploader = ({ onUploadSuccess }) => {
         setError('');
 
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/upload', formData, {
+            const response = await axios.post(`${API_URL}/api/upload`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

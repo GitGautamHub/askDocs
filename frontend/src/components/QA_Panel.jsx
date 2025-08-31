@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const QA_Panel = ({ selectedDocId, onCitationClick }) => {
   const [query, setQuery] = useState('');
   const [scope, setScope] = useState('this_document');
@@ -22,7 +25,7 @@ const QA_Panel = ({ selectedDocId, onCitationClick }) => {
       }
 
       try {
-          const response = await fetch('http://127.0.0.1:8000/api/qa', {
+          const response = await fetch(`${API_URL}/api/qa`, {
               method: 'POST',
               headers: {
                   'Content-Type': 'application/json',
