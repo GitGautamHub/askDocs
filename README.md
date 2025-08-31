@@ -55,7 +55,7 @@ For a production environment, this application should be deployed on a virtual p
 ```
     frontend/
     ├── public/
-    │   └── pdf.worker.min.js      # PDF.js worker script for rendering
+    │   └── pdf.worker.min.mjs      # PDF.js worker script for rendering
     ├── src/
     │   ├── assets/
     │   ├── components/
