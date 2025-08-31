@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# FastAPI
+.vscode/
+
+# Database
+data/ingestion_status.db
+
+# FAISS Index
+data/faiss_index/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+frontend/.vite/
+
+# Logs
+*.log
+
+# Operating System Files
+.DS_Store
+Thumbs.db

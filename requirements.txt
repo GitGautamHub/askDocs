@@ -1,0 +1,30 @@
+# FastAPI & Core Backend Libraries
+fastapi
+uvicorn
+python-dotenv
+pydantic-settings
+python-multipart
+python-docx
+Pillow
+pypdf
+
+# LangChain & AI
+langchain
+langchain-huggingface
+langchain-google-genai
+sentence-transformers
+faiss-cpu
+
+# Document Processing & OCR
+pdfplumber
+PyMuPDF
+pdf2image
+python-doctr
+torch
+torchvision
+torchaudio
+
+# Development & Linting
+black
+isort
+mypy
